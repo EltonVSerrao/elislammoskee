@@ -1,0 +1,13 @@
+{% extends '@Elislam/Default/base.html.twig' %}
+{% block body %}
+<div class="container-fluid col-11">
+    <h1 class="text-center">maak een categorie</h1>
+
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <input class="btn btn-lg btn-outline-primary" type="submit" value="Create" style="margin-bottom: 10px;"/>
+    {{ form_end(form) }}
+
+    <button class="btn btn-success space_box float-left btn-space"><a href="{{ path('blogcat_index') }}"><span class="fa fa-chevron-circle-left" style="color: #FFFFFF;"> back to list</span></a></button>
+</div>
+{% endblock %}

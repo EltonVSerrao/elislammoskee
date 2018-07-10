@@ -1,0 +1,32 @@
+{% extends '@Elislam/Default/base.html.twig' %}
+
+{% block body %}
+    <h1>Groep</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ groep.id }}</td>
+            </tr>
+            <tr>
+                <th>Naam</th>
+                <td>{{ groep.naam }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('groep_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('groep_edit', { 'id': groep.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

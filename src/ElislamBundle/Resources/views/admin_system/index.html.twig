@@ -1,0 +1,27 @@
+{% extends '@Elislam/Default/base.html.twig' %}
+{% block body %}
+    <div class="container-fluid">
+        <h1 class="text-center">Welkom op uw dashboard {{ app.user }}</h1>
+    </div>
+    <div class="row mb-2 container-fluid">
+        <div class="col-md-12 container-fluid col-form-label-sm">
+            <div class="card flex-md-row mb-4 badge-primary box-shadow h-md-250" style="margin-left: 52px;">
+                <div class="card-body d-flex flex-column">
+                    <span class="fa fa-newspaper text-center fa-10x"></span>
+                    <h2 class="text-center">
+                        <a class="text-dark" href="{{ path('blogcat_index') }}">blog Categorie</a>
+                    </h2>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12 container-fluid col-form-label-sm">
+            <div class="card flex-md-row mb-4 badge-info box-shadow h-md-250" style="margin-left: 52px;">
+                <div class="card-body d-flex flex-column">
+                    <span class="fa fa-book-open text-center fa-10x"></span>
+                    <h2 class="text-center">
+                        <a class="text-dark" href="#">bieb system</a>
+                    </h2>
+                </div>
+            </div>
+        </div>
+{% endblock %}

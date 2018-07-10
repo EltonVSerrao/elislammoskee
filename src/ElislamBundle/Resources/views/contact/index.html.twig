@@ -1,0 +1,89 @@
+{% extends '@Elislam/Default/base.html.twig' %}
+{% block stylesheets %}
+  <link href="{{ asset('bundles/elislam/css/sub.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+  <div class="alert alert-success" style="display: none;">
+      {% set flashbag_notices = app.session.flashbag.get('notice') %}
+      {% if flashbag_notices is not empty %}
+
+        <div class="flash-notice">
+               {% for notice in flashbag_notices %}
+               {{notice}}
+               {% endfor %}
+            </div>
+      {% endif %}
+  </div>
+    <section id="contact">
+        <div class="container-fluid col-form-label p-5">
+            <div class="row">
+                <div class="col-md-7 resp-container">
+                    <iframe class="resp-iframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2452.703405943859!2d4.297038415626723!3d52.0669239774594!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c5b6d4272545df%3A0x5ca985f8eed14830!2sStichting+Moskee+El+Islam!5e0!3m2!1snl!2snl!4v1529584527678" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                </div>
+                <div class="col-md-4" id="box">
+                    <h3 style="color: #FFFFFF" class="text-center"><strong>Get in Touch</strong></h3>
+                    <form class="form-horizontal" action="" method="" id="contact_form">
+                        <fieldset>
+                            <div class="form-group">
+                                <div class="col-md-12">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                        <input name="first_name" placeholder="Name" class="form-control" type="text">
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                            <!-- Text input-->
+                            <div class="form-group">
+
+                                <div class="col-md-12">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                                        <input name="email" placeholder="E-Mail Address" class="form-control" type="text">
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <!-- Text input-->
+
+                            <div class="form-group">
+
+                                <div class="col-md-12">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+                                        <input name="phone" placeholder="(005)501-120101" class="form-control" type="text">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Text input-->
+
+                            <div class="form-group">
+
+                                <div class="col-md-12 inputGroupContainer">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+                                        <textarea class="form-control" name="comment" placeholder="Message"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+
+                                <div class="col-md-12">
+                                    <button type="submit" class="btn btn-warning pull-right">Send <span class="glyphicon glyphicon-send"></span></button>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

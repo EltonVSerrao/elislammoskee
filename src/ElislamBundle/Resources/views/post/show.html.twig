@@ -1,0 +1,26 @@
+{% extends '@Elislam/Default/base.html.twig' %}
+{% block stylesheets %}
+    <link href="{{ asset('bundles/elislam/css/sub.css') }}" rel="stylesheet">
+{% endblock %}
+{% block body %}
+<div class="container-fluid col-9">
+    <h1 class="text-center text-white">Galerij</h1>
+    <img class="img-fluid image scale-on-hover col-7 img-space" src="{{ asset('uploads/images/' ~ post.image) }}">
+    <table class="table table-striped table-dark table-bordered table-responsive">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ post.id }}</td>
+            </tr>
+            <tr>
+                <th>Image</th>
+                <td>{{ post.image }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <button class="btn btn-success space_box float-left btn-space"><a href="{{ path('post_index') }}"><span class="fa fa-chevron-circle-left" style="color: #FFFFFF;"> back to list</span></a></button>
+    {{ form_start(delete_form) }}
+    <button class="btn btn-success space_box" type="submit"><span class="fa fa-trash" style="color: #FFFFFF;"> Delete</span></button>
+    {{ form_end(delete_form) }}
+</div>
+{% endblock %}

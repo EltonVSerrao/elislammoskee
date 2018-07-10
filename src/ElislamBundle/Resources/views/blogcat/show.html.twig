@@ -1,0 +1,30 @@
+{% extends '@Elislam/Default/base.html.twig' %}
+{% block stylesheets %}
+    <link href="{{ asset('bundles/elislam/css/sub.css') }}" rel="stylesheet">
+{% endblock %}
+{% block body %}
+    <div class="container-fluid col-9">
+        <h1 class="text-center text-white">Blog Categorie</h1>
+        <table class="table table-striped table-dark table-bordered table-responsive">
+            <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ blogCat.id }}</td>
+            </tr>
+            <tr>
+                <th>Categorie</th>
+                <td>{{ blogCat.categorie }}</td>
+            </tr>
+            <tr>
+                <th>Shortwords</th>
+                <td>{{ blogCat.shortwords }}</td>
+            </tr>
+            </tbody>
+        </table>
+        <button class="btn btn-success space_box float-left btn-space"><a href="{{ path('blogcat_index') }}"><span class="fa fa-chevron-circle-left" style="color: #FFFFFF;"> Back to list</span></a></button>
+        <button class="btn btn-success space_box float-left btn-space"><a href="{{ path('blogcat_edit',{ 'id': blogCat.id }) }}"><span class="fa fa-edit" style="color: #FFFFFF;">Edit</span></a></button>
+        {{ form_start(delete_form) }}
+        <button class="btn btn-success space_box" type="submit"><span class="fa fa-trash" style="color: #FFFFFF;"> Delete</span></button>
+        {{ form_end(delete_form) }}
+    </div>
+{% endblock %}

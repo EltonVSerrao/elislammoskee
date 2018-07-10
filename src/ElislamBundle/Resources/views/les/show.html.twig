@@ -1,0 +1,52 @@
+{% extends '@Elislam/Default/base.html.twig' %}
+
+{% block body %}
+    <h1>Le</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ le.id }}</td>
+            </tr>
+            <tr>
+                <th>Naam</th>
+                <td>{{ le.naam }}</td>
+            </tr>
+            <tr>
+                <th>Docent</th>
+                <td>{{ le.docent }}</td>
+            </tr>
+            <tr>
+                <th>Kind</th>
+                <td>{{ le.kind }}</td>
+            </tr>
+            <tr>
+                <th>Groep</th>
+                <td>{{ le.groep }}</td>
+            </tr>
+            <tr>
+                <th>Startmoment</th>
+                <td>{% if le.startmoment %}{{ le.startmoment|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Endmoment</th>
+                <td>{% if le.endmoment %}{{ le.endmoment|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('les_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('les_edit', { 'id': le.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

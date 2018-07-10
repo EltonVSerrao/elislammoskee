@@ -1,0 +1,39 @@
+{% extends '@Elislam/Default/base.html.twig' %}
+
+{% block body %}
+    <h1>Groeps list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Naam</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for groep in groeps %}
+            <tr>
+                <td><a href="{{ path('groep_show', { 'id': groep.id }) }}">{{ groep.id }}</a></td>
+                <td>{{ groep.naam }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('groep_show', { 'id': groep.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('groep_edit', { 'id': groep.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('groep_new') }}">Create a new groep</a>
+        </li>
+    </ul>
+{% endblock %}

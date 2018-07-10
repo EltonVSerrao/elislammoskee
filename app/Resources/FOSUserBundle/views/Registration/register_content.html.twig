@@ -1,0 +1,10 @@
+{% extends '@Elislam/Default/base.html.twig' %}
+{% trans_default_domain 'FOSUserBundle' %}
+{% block stylesheets %}
+    <link href="{{ asset('bundles/elislam/css/inlog.sys.css') }}" rel="stylesheet">
+{% endblock %}
+{% block body %}
+{{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
+    {{ form_widget(form) }}
+{{ form_end(form) }}
+{% endblock %}

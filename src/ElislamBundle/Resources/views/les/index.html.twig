@@ -1,0 +1,49 @@
+{% extends '@Elislam/Default/base.html.twig' %}
+
+{% block body %}
+    <h1>Les list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Naam</th>
+                <th>Docent</th>
+                <th>Kind</th>
+                <th>Groep</th>
+                <th>Startmoment</th>
+                <th>Endmoment</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for le in les %}
+            <tr>
+                <td><a href="{{ path('les_show', { 'id': le.id }) }}">{{ le.id }}</a></td>
+                <td>{{ le.naam }}</td>
+                <td>{{ le.docent }}</td>
+                <td>{{ le.kind }}</td>
+                <td>{{ le.groep }}</td>
+                <td>{% if le.startmoment %}{{ le.startmoment|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if le.endmoment %}{{ le.endmoment|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('les_show', { 'id': le.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('les_edit', { 'id': le.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('les_new') }}">Create a new le</a>
+        </li>
+    </ul>
+{% endblock %}

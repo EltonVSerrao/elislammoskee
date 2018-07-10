@@ -1,0 +1,47 @@
+{% extends '@Elislam/Default/base.html.twig' %}
+{% trans_default_domain 'FOSUserBundle' %}
+{% block stylesheets %}
+    <link href="{{ asset('bundles/elislam/css/inlog.css') }}" rel="stylesheet">
+    <link href="{{ asset('bundles/elislam/css/sub.css') }}" rel="stylesheet">
+{% endblock %}
+{% block body %}
+{% if error %}
+    <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+{% endif %}
+<div class="container-fluid py-5">
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <div class="card rounded-2">
+                <div class="card-header badge-warning">
+                    <h1 class="h3 mb-3 font-weight-normal text-center">Please sign in</h1>
+                </div>
+                <div class="card-body container-fluid">
+                    <form action="{{ path("fos_user_security_check") }}" method="post" class="form-signin">
+                        <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+                        <label for="username" class="sr-only">{{ 'security.login.username'|trans }}</label>
+                        <input type="text" id="username" name="_username" value="{{ last_username }}" placeholder="Email address" class="form-control form-space" required autofocus />
+                        <label for="password" class="sr-only">{{ 'security.login.password'|trans }}</label>
+                        <input type="password" id="password" name="_password" class="form-control form-space" placeholder="Password" required />
+                        <div class="checkbox mb-3">
+                            <label>
+                                <input type="checkbox"
+                                       id="remember_me"
+                                       name="_remember_me"
+                                       value="on" /> {{ 'remember me'|trans }}
+
+                            </label>
+                        </div>
+                        <input type="submit"
+                               class="btn btn-lg btn-success btn-block"
+                               id="_submit"
+                               name="_submit"
+                               value="login" />
+                        <p class="mt-5 mb-3 text-muted text-center">&copy; 2017-2018</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

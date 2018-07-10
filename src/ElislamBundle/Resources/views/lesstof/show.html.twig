@@ -1,0 +1,40 @@
+{% extends '@Elislam/Default/base.html.twig' %}
+
+{% block body %}
+    <h1>Lesstof</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ lesstof.id }}</td>
+            </tr>
+            <tr>
+                <th>Lesid</th>
+                <td>{{ lesstof.lesid }}</td>
+            </tr>
+            <tr>
+                <th>Filename</th>
+                <td>{{ lesstof.filename }}</td>
+            </tr>
+            <tr>
+                <th>Datetime</th>
+                <td>{{ lesstof.datetime }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('lesstof_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('lesstof_edit', { 'id': lesstof.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

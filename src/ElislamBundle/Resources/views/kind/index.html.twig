@@ -1,0 +1,49 @@
+{% extends '@Elislam/Default/base.html.twig' %}
+
+{% block body %}
+    <h1>Kinds list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Userid</th>
+                <th>Voornaam</th>
+                <th>Tussenvoegsel</th>
+                <th>Achternaam</th>
+                <th>Email</th>
+                <th>Geboortedatum</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for kind in kinds %}
+            <tr>
+                <td><a href="{{ path('kind_show', { 'id': kind.id }) }}">{{ kind.id }}</a></td>
+                <td>{{ kind.userid }}</td>
+                <td>{{ kind.voornaam }}</td>
+                <td>{{ kind.tussenvoegsel }}</td>
+                <td>{{ kind.achternaam }}</td>
+                <td>{{ kind.email }}</td>
+                <td>{% if kind.geboortedatum %}{{ kind.geboortedatum|date('Y-m-d') }}{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('kind_show', { 'id': kind.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('kind_edit', { 'id': kind.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('kind_new') }}">Create a new kind</a>
+        </li>
+    </ul>
+{% endblock %}
