@@ -163,7 +163,8 @@ class __TwigTemplate_59aad845fd7af9f5934e0285c9c5c5dfbd5d25f5e5bde52f0c57cbcfc72
         $this->displayBlock('javascripts', $context, $blocks);
         // line 56
         echo "</body>
-</html>";
+</html>
+";
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
 
@@ -253,7 +254,7 @@ class __TwigTemplate_59aad845fd7af9f5934e0285c9c5c5dfbd5d25f5e5bde52f0c57cbcfc72
 
     public function getDebugInfo()
     {
-        return array (  228 => 55,  211 => 45,  194 => 11,  176 => 5,  165 => 56,  163 => 55,  155 => 50,  151 => 49,  146 => 46,  144 => 45,  140 => 43,  135 => 41,  130 => 39,  125 => 38,  120 => 36,  115 => 35,  113 => 34,  109 => 32,  103 => 29,  99 => 28,  95 => 27,  91 => 26,  86 => 24,  81 => 23,  75 => 20,  71 => 19,  66 => 18,  64 => 17,  55 => 12,  53 => 11,  47 => 8,  43 => 7,  39 => 6,  35 => 5,  29 => 1,);
+        return array (  229 => 55,  212 => 45,  195 => 11,  177 => 5,  165 => 56,  163 => 55,  155 => 50,  151 => 49,  146 => 46,  144 => 45,  140 => 43,  135 => 41,  130 => 39,  125 => 38,  120 => 36,  115 => 35,  113 => 34,  109 => 32,  103 => 29,  99 => 28,  95 => 27,  91 => 26,  86 => 24,  81 => 23,  75 => 20,  71 => 19,  66 => 18,  64 => 17,  55 => 12,  53 => 11,  47 => 8,  43 => 7,  39 => 6,  35 => 5,  29 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -322,6 +323,7 @@ class __TwigTemplate_59aad845fd7af9f5934e0285c9c5c5dfbd5d25f5e5bde52f0c57cbcfc72
 </script>
 {% block javascripts %}{% endblock %}
 </body>
-</html>", "@Elislam/Default/base.html.twig", "C:\\xampp\\htdocs\\newP\\elislam\\src\\ElislamBundle\\Resources\\views\\Default\\base.html.twig");
+</html>
+", "@Elislam/Default/base.html.twig", "C:\\xampp\\htdocs\\elislam\\src\\ElislamBundle\\Resources\\views\\Default\\base.html.twig");
     }
 }
